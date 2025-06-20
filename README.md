@@ -68,7 +68,7 @@ node -v                                                    # Verify Node.js vers
 npm -v                                                     # Verify npm version
 
 # Install Electron globally or locally as needed
-npm install electron electron-builder --save-dev                            # Or `npm install` if included in package.json
+npm install electron electron-builder --save-dev
 ```
 
 Before building and signing the Windows executable, you need to generate the required certificates:
