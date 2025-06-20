@@ -68,7 +68,7 @@ node -v
 npm -v
 
 # Install Electron globally or locally as needed
-npm install electron electron-builder --save-dev --force
+npm install electron electron-builder electron-winstaller --save-dev --force
 ```
 
 Before building and signing the Windows executable, you need to generate the required certificates:
@@ -109,6 +109,15 @@ Before building and signing the Windows executable, you need to generate the req
    ```
 
    This confirms that the executable is properly signed with your local CA certificate.
+
+6. Build the installer executable (which bundles the signed app EXE):
+   npm run build-installer
+
+7. Sign the installer executable:
+   npm run sign-installer
+
+8. Verify the signed installer executable:
+   npm run verify-installer
 
 Alternatively, run all steps in sequence with:
 
