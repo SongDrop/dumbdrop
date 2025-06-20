@@ -56,19 +56,19 @@ This is an Electron app that manages the DumbDrop file sharing server with easy 
 
 Before running or building the app, you may want to set up your shell environment to properly load Node.js (via NVM) and set necessary options for Electron.
 
-Add and run the following in your shell or script:
+Add and run the following in your shell or script on MacOSX:
 
 ```bash
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"           # Load nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # Load nvm bash_completion
-export NODE_OPTIONS=--openssl-legacy-provider              # Fix OpenSSL compatibility if needed
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+export NODE_OPTIONS=--openssl-legacy-provider
 
-node -v                                                    # Verify Node.js version
-npm -v                                                     # Verify npm version
+node -v
+npm -v
 
 # Install Electron globally or locally as needed
-npm install electron electron-builder --save-dev
+npm install electron electron-builder --save-dev --force
 ```
 
 Before building and signing the Windows executable, you need to generate the required certificates:
