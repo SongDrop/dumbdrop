@@ -26,6 +26,51 @@ This is an Electron app that manages the DumbDrop file sharing server with easy 
 
 ## Build Prerequisites
 
+# DumbDrop Electron Manager
+
+This is an Electron app that manages the DumbDrop file sharing server with easy setup and PIN protection.
+
+## Features
+
+- Runs quietly in the system tray
+- Prompts for a secure 4-10 digit PIN on first run
+- Clones or updates the DumbDrop repository automatically
+- Installs all necessary Node.js dependencies
+- Starts the DumbDrop server in the background
+- Opens required firewall port on Windows
+- Allows changing the PIN anytime from the tray menu
+- Saves PIN securely using `electron-store`
+- Prevents accidental app closing by minimizing to tray
+- Registers for auto-start on Windows
+
+## Usage
+
+1. Ensure Node.js (v20+) is installed on your system.
+2. Run `npm install` to install Electron and dependencies.
+3. Start the app with `npm start`.
+4. On first run, enter your desired 4-10 digit PIN when prompted.
+5. Access DumbDrop at `http://localhost:4531` (or your configured port).
+6. Use the tray icon menu to show the app, change the PIN, or exit.
+
+## Setting up Node.js and Electron Environment
+
+Before running or building the app, you may want to set up your shell environment to properly load Node.js (via NVM) and set necessary options for Electron.
+
+Add and run the following in your shell or script:
+
+```bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"           # Load nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # Load nvm bash_completion
+export NODE_OPTIONS=--openssl-legacy-provider              # Fix OpenSSL compatibility if needed
+
+node -v                                                    # Verify Node.js version
+npm -v                                                     # Verify npm version
+
+# Install Electron globally or locally as needed
+npm install electron electron-builder --save-dev                            # Or `npm install` if included in package.json
+```
+
 Before building and signing the Windows executable, you need to generate the required certificates:
 
 1. Make sure you have **OpenSSL** and **osslsigncode** installed and available in your PATH.
